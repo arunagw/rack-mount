@@ -153,7 +153,7 @@ module Rack::Mount
           result = route.app.call(env)
           return result unless result[1][X_CASCADE] == PASS
         ensure
-          env[@parameters_key] = old_params
+          env[@parameters_key] = params
         end
       end
 
